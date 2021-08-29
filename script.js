@@ -41,6 +41,15 @@ let display = document.querySelector("#result");
 let calculation = document.querySelector("#calculation");
 const btns = document.querySelectorAll("button");
 btns.forEach(btn => btn.addEventListener("click", function writeDisplay(e){
+    if (display.textContent ==  "Can't divide by 0!")
+    {
+        display.textContent = "";
+        calculation.textContent = "";
+        firstNum = "";
+        operator = "";
+        secondNum = "";
+        operation = false;
+    }
     if (e.target.textContent == "Clear") {
         display.textContent = "";
         calculation.textContent = "";
@@ -50,33 +59,25 @@ btns.forEach(btn => btn.addEventListener("click", function writeDisplay(e){
         operation = false;
     }
     if (e.target.textContent === "+" || e.target.textContent === "-" || e.target.textContent === "*" || e.target.textContent === "/") {
-        if (operator === "") {
-            calculation.textContent = firstNum + e.target.textContent;
-            operator = e.target.textContent;
-            operation = true;
-        }
-        else {
-            if (secondNum == "") {
-                const editedText = calculation.textContent.slice(0, -1)
-                calculation.textContent = editedText;
-                operator = e.target.textContent;
+        if (firstNum !== "") {
+            if (operator === "") {
                 calculation.textContent = firstNum + e.target.textContent;
+                operator = e.target.textContent;
+                operation = true;
             }
             else {
-                firstNum = operate(parseInt(firstNum), operator, parseInt(secondNum));
-                if (isNaN(firstNum)) {
-                    display.textContent = "";
-                    calculation.textContent = "";
-                    firstNum = "";
-                    operator = "";
-                    secondNum = "";
-                    operation = false;
+                if (secondNum == "") {
+                    const editedText = calculation.textContent.slice(0, -1)
+                    calculation.textContent = editedText;
+                    operator = e.target.textContent;
+                    calculation.textContent = firstNum + e.target.textContent;
                 }
                 else {
-                display.textContent = firstNum;
-                operator = e.target.textContent;
-                calculation.textContent = firstNum + operator;
-                secondNum = "";
+                    firstNum = operate(parseInt(firstNum), operator, parseInt(secondNum));
+                    display.textContent = firstNum;
+                    operator = e.target.textContent;
+                    calculation.textContent = firstNum + operator;
+                    secondNum = "";
                 }
             }
         }
@@ -99,7 +100,7 @@ btns.forEach(btn => btn.addEventListener("click", function writeDisplay(e){
         }
     }
 
-    console.log(firstNum)
-    console.log(operator)
-    console.log(secondNum)
+    console.log(`first num is : ${firstNum}, operator is: ${operator} second num is: ${secondNum}`);
+    console.log(`display is : ${display.textContent}, calculation is ${calculation.textContent} `);
+    
 }));
