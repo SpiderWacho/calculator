@@ -119,4 +119,360 @@
         
 }
 
+@media only screen and (min-width: 600px) {
+
+    body {
+        background-color: rgb(229, 190, 221) ;
+    }
+    h1 {
+        margin: 10%;   
+        text-align: center;
+    }
+    #calculator {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50vw;
+        height: 60vh;
+        border: 2px black solid;
+    }
+
+    #display { 
+        height: 25%;
+        width: 100%;
+        background-color: rgb(65, 65, 65);
+        border: solid 1px black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        font-family: 'Orbitron', sans-serif;
+        overflow: hidden;
+    }
+    #buttons {
+        
+        height: 75%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, auto);
+        justify-content: center;
+    }
+    
+
+    #result {
+        height: 100%;
+        font-size: 2em;
+        color: green;
+        margin: auto;
+        width: 100%;
+        text-align: end;
+    }
+    #calculation {
+        width: 100%;
+        height: 5%;
+        font-size: 1em;
+        color: green;
+        text-align: end;
+    }
+
+  
+
+    .btn-num {
+        width: 100%;
+        height: 100%;
+        font-size: 100%;
+        border: 1px black solid;
+        gap: 0px;
+        
+    }
+
+    .btn-num:hover {
+        background-color:  rgb(187, 185, 185);
+    }
+
+    .btn-sign {
+        width: 100%;
+        height: 100%;
+        background-color: grey;
+        font-size: 100%;
+        border: 1px black solid;
+        color: white;
+    }
+
+    .btn-sign:hover {
+        background-color:  rgb(187, 185, 185);
+    }
+
+    #equal {
+        width: 100%;
+        height: 100%;
+        background-color: orange;
+    }
+    #equal:hover {
+        background-color:  rgb(252, 207, 125);
+    }
+
+    #clear {
+        background-color: rgb(156, 72, 72);
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-column-end: 3;
+    }
+
+    #clear:hover {
+        background-color:  rgb(173, 115, 115);
+    }
+
+    #delete {
+        background-color: rgb(180, 102, 66);
+        grid-column-start: 3;
+        grid-row-start: 1;
+        grid-column-end: 5;
+    }
+
+    #delete:hover {
+        background-color:  rgb(184, 132, 109);
+    }
+        
+} 
+@media only screen and (min-width: 992px) { 
+    body {
+        background-color: rgb(229, 190, 221) ;
+    }
+    h1 {
+        margin: 3%;   
+        text-align: center;
+    }
+    #calculator {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 25vw;
+        height: 65vh;
+        border: 2px black solid;
+    }
+
+    #display { 
+        height: 25%;
+        width: 100%;
+        background-color: rgb(65, 65, 65);
+        border: solid 1px black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        font-family: 'Orbitron', sans-serif;
+        overflow: hidden;
+    }
+    #buttons {
+        
+        height: 75%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, auto);
+        justify-content: center;
+    }
+
+
+    #result {
+        height: 100%;
+        font-size: 3.5em;
+        color: green;
+        margin: auto;
+        width: 100%;
+        text-align: end;
+    }
+    #calculation {
+        width: 100%;
+        height: 5%;
+        font-size: 1.5em;
+        color: green;
+        text-align: end;
+    }
+
+
+
+    .btn-num {
+        width: 100%;
+        height: 100%;
+        font-size: 2em;
+        border: 1px black solid;
+        gap: 0px;
+        
+    }
+
+    .btn-num:hover {
+        background-color:  rgb(187, 185, 185);
+    }
+
+    .btn-sign {
+        width: 100%;
+        height: 100%;
+        background-color: grey;
+        font-size: 1.5em;
+        border: 1px black solid;
+        color: white;
+    }
+
+    .btn-sign:hover {
+        background-color:  rgb(187, 185, 185);
+    }
+
+    #equal {
+        width: 100%;
+        height: 100%;
+        background-color: orange;
+    }
+    #equal:hover {
+        background-color:  rgb(252, 207, 125);
+    }
+
+    #clear {
+        background-color: rgb(156, 72, 72);
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-column-end: 3;
+    }
+
+    #clear:hover {
+        background-color:  rgb(173, 115, 115);
+    }
+
+    #delete {
+        background-color: rgb(180, 102, 66);
+        grid-column-start: 3;
+        grid-row-start: 1;
+        grid-column-end: 5;
+    }
+
+    #delete:hover {
+        background-color:  rgb(184, 132, 109);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    body {
+        background-color: rgb(229, 190, 221) ;
+    }
+    h1 {
+        margin: 3%;   
+        text-align: center;
+    }
+    #calculator {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 25vw;
+        height: 65vh;
+        border: 2px black solid;
+    }
+
+    #display { 
+        height: 25%;
+        width: 100%;
+        background-color: rgb(65, 65, 65);
+        border: solid 1px black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        font-family: 'Orbitron', sans-serif;
+        overflow: hidden;
+    }
+    #buttons {
+        
+        height: 75%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, auto);
+        justify-content: center;
+    }
+
+
+    #result {
+        height: 100%;
+        font-size: 3.5em;
+        color: green;
+        margin: auto;
+        width: 100%;
+        text-align: end;
+    }
+    #calculation {
+        width: 100%;
+        height: 5%;
+        font-size: 1.5em;
+        color: green;
+        text-align: end;
+    }
+
+
+
+    .btn-num {
+        width: 100%;
+        height: 100%;
+        font-size: 2em;
+        border: 1px black solid;
+        gap: 0px;
+        
+    }
+
+    .btn-num:hover {
+        background-color:  rgb(187, 185, 185);
+    }
+
+    .btn-sign {
+        width: 100%;
+        height: 100%;
+        background-color: grey;
+        font-size: 1.5em;
+        border: 1px black solid;
+        color: white;
+    }
+
+    .btn-sign:hover {
+        background-color:  rgb(187, 185, 185);
+    }
+
+    #equal {
+        width: 100%;
+        height: 100%;
+        background-color: orange;
+    }
+    #equal:hover {
+        background-color:  rgb(252, 207, 125);
+    }
+
+    #clear {
+        background-color: rgb(156, 72, 72);
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-column-end: 3;
+    }
+
+    #clear:hover {
+        background-color:  rgb(173, 115, 115);
+    }
+
+    #delete {
+        background-color: rgb(180, 102, 66);
+        grid-column-start: 3;
+        grid-row-start: 1;
+        grid-column-end: 5;
+    }
+
+    #delete:hover {
+        background-color:  rgb(184, 132, 109);
+    }
+
+}
 
