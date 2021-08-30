@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rampart+One&display=swap');
 @media only screen and (max-width: 600px) { 
+
+    body {
+        background-color: rgb(229, 190, 221) ;
+    }
+    h1 {
+        margin: 10%;   
+        text-align: center;
+    }
     #calculator {
         margin: auto;
         display: flex;
@@ -7,11 +15,12 @@
         align-items: center;
         flex-direction: column;
         width: 75vw;
-        height: 70vh;
+        height: 60vh;
+        border: 2px black solid;
     }
 
     #display { 
-        height: 20%;
+        height: 25%;
         width: 100%;
         background-color: rgb(65, 65, 65);
         border: solid 1px black;
@@ -22,6 +31,16 @@
         font-family: 'Orbitron', sans-serif;
         overflow: hidden;
     }
+    #buttons {
+        
+        height: 75%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, auto);
+        justify-content: center;
+    }
+    
 
     #result {
         height: 100%;
@@ -37,19 +56,9 @@
         font-size: 1em;
         color: green;
         text-align: end;
-
-        
     }
 
-    #buttons {
-        
-        height: 55%;
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(4, auto);
-        justify-content: center;
-    }
+  
 
     .btn-num {
         width: 100%;
@@ -58,6 +67,10 @@
         border: 1px black solid;
         gap: 0px;
         
+    }
+
+    .btn-num:hover {
+        background-color:  rgb(187, 185, 185);
     }
 
     .btn-sign {
@@ -69,14 +82,39 @@
         color: white;
     }
 
+    .btn-sign:hover {
+        background-color:  rgb(187, 185, 185);
+    }
+
     #equal {
         width: 100%;
         height: 100%;
         background-color: orange;
     }
+    #equal:hover {
+        background-color:  rgb(252, 207, 125);
+    }
 
     #clear {
         background-color: rgb(156, 72, 72);
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-column-end: 3;
+    }
+
+    #clear:hover {
+        background-color:  rgb(173, 115, 115);
+    }
+
+    #delete {
+        background-color: rgb(180, 102, 66);
+        grid-column-start: 3;
+        grid-row-start: 1;
+        grid-column-end: 5;
+    }
+
+    #delete:hover {
+        background-color:  rgb(184, 132, 109);
     }
         
 }
