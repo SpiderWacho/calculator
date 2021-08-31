@@ -116,6 +116,10 @@
     #delete:hover {
         background-color:  rgb(184, 132, 109);
     }
+
+    p {
+        text-align: center;
+    }
         
 }
 
@@ -236,6 +240,10 @@
     #delete:hover {
         background-color:  rgb(184, 132, 109);
     }
+
+    p {
+        text-align: center;
+    }
         
 } 
 @media only screen and (min-width: 992px) { 
@@ -353,6 +361,10 @@
 
     #delete:hover {
         background-color:  rgb(184, 132, 109);
+    }
+    
+    p {
+        text-align: center;
     }
 }
 
@@ -472,6 +484,10 @@
 
     #delete:hover {
         background-color:  rgb(184, 132, 109);
+    }
+
+    p {
+        text-align: center;
     }
 
 }
