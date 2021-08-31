@@ -44,24 +44,25 @@ let result = false;
 
 const deleteBtn = document.querySelector("#delete");
 deleteBtn.addEventListener("click", function deleteNumber() {
+    if (display.textContent.slice(-1) === ".") {
+    };
     if (operation === true && writeSecond === true) {
         display.textContent = display.textContent.slice(0, -1);
         secondNum =  display.textContent;
-        console.log("Case1")
-        console.log(secondNum)
     }
     else {
+        if (display.textContent.slice(-1) === ".") {
+        };
         display.textContent = display.textContent.slice(0, -1);
         firstNum =  display.textContent;
-        console.log("Case2")
-        console.log(firstNum)
+        
     }
 })
 
 const btns = document.querySelectorAll("button");
-btns.forEach(btn => btn.addEventListener("click", function writeDisplay(e){
-    console.log(`first number is ${firstNum} secondNumber is ${secondNum}`);
-    console.log(`PRESSED: ${e.target.textContent}`);
+btns.forEach(btn => btn.addEventListener("click", writeDisplay));
+
+function writeDisplay(e){
     if (display.textContent ==  "Can't divide by 0!")
     {
         display.textContent = "";
@@ -79,6 +80,18 @@ btns.forEach(btn => btn.addEventListener("click", function writeDisplay(e){
         secondNum = "";
         operation = false;
     }
+    if (e.target.textContent === ".") {
+        if (!display.textContent.includes(".")) {
+            if (operation === true) {
+                secondNum += e.target.textContent;
+                display.textContent = secondNum;
+            }
+            else {
+                display.textContent += e.target.textContent;
+                firstNum = display.textContent;
+            }
+        }
+    }
     if (e.target.textContent === "+" || e.target.textContent === "-" || e.target.textContent === "*" || e.target.textContent === "/") {
         if (firstNum !== "") {
             if (operator === "") {
@@ -86,36 +99,32 @@ btns.forEach(btn => btn.addEventListener("click", function writeDisplay(e){
                 operator = e.target.textContent;
                 operation = true;
                 display.textContent = "";
-                console.log(`CASE NO OPERATOR, FIRST NUMBER NO EMPTY`);
+    
             }
             else {
                 if (secondNum == "") {
                     calculation.textContent = calculation.textContent.slice(0, -1);
                     operator = e.target.textContent;
-                    calculation.textContent = firstNum + e.target.textContent;
-                    console.log(`first number is ${firstNum} secondNumber is ${secondNum}`);
-                    console.log(`CASE OPERATOR, SECOND NUMBER EMPTY`);
-                    
+                    calculation.textContent = firstNum + e.target.textContent;                    
                 }
                 else {
-                    display.textContent = operate(parseInt(firstNum), operator, parseInt(secondNum));
+                    display.textContent = operate(parseFloat(firstNum), operator, parseFloat(secondNum));
                     result = true;
+        
                     operator = e.target.textContent;
                     calculation.textContent = firstNum + operator;
                     firstNum = display.textContent;
                     secondNum = "";
-                    calculation.textContent = firstNum + operator;
-                    console.log(`first number is ${firstNum} secondNumber is ${secondNum}`);
-                    console.log(`CASE OPERATOR, SECOND NUMBER NO EMPTY`);
-                    
+                    calculation.textContent = firstNum + operator;                    
                 }
             }
         }
     }
     else if (e.target.textContent === "=") {
         if (secondNum != "") {
-            display.textContent = operate(parseInt(firstNum), operator, parseInt(secondNum));
+            display.textContent = operate(parseFloat(firstNum), operator, parseFloat(secondNum));
             result = true;
+
             operator = "";
             firstNum = display.textContent;
             calculation.textContent = "";
@@ -129,7 +138,6 @@ btns.forEach(btn => btn.addEventListener("click", function writeDisplay(e){
                 writeSecond = true;            
                 secondNum += e.target.textContent;
                 display.textContent = secondNum;
-                console.log(`CASE SECOND NUMBER INPUT `);
             }
             else {
                 secondNum = "";
@@ -141,20 +149,16 @@ btns.forEach(btn => btn.addEventListener("click", function writeDisplay(e){
         else {   
             display.textContent += e.target.textContent;
             firstNum = display.textContent;
-            console.log(`CASE FIRST NUMBER INPUT `);
         }
     }
 
     if (e.target.textContent === "Delete") {
         if (!writeSecond) {
-            console.log(`first number is ${firstNum}`);
         firstNum = display.textContent;
         }
         else {
-            console.log(`secondNumber is ${secondNum}`);
             secondNum = display.textContent;
         }
     }
-    
-}));
+};
 
